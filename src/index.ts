@@ -1,23 +1,12 @@
-// enum weekDay {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY};
-enum weekDay {
-    MONDAY = "Monday",
-    TUESDAY = "Tuesday",
-    WEDNESDAY = "Wednesday",
-    THURSDAY = "Thursday",
-    FRIDAY = "Friday"
-};
+//let size = "Med";
+//const SIZE = "Med";
 
-const employee: {
-    empName: string,
-    dependents: number,
-    committees: [string, boolean],
-    payDay: string;
-} = {
-    empName: "Luca",
-    dependents: 2,
-    committees: ["Philantrophy", true],
-    payDay: weekDay.FRIDAY
-};
-
-employee.committees.push("fabba1892, 200");
-console.log(employee);
+function compareWords(
+    first: string, second: string):
+    "first is earlier" | "same" | "first is later" {
+    if (first < second)
+        return "first is earlier";
+    if (first > second) return "first is later";
+    return "same";
+}
+console.log(compareWords("Lua", "Luca"));
