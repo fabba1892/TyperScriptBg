@@ -1,11 +1,12 @@
 "use strict";
-//let size = "Med";
-//const SIZE = "Med";
-function compareWords(first, second) {
-    if (first < second)
-        return "first is earlier";
-    if (first > second)
-        return "first is later";
-    return "same";
+function irCalculator(p, r, returnValue) {
+    if (returnValue === "returnString") {
+        return p * r;
+    }
+    else {
+        return +p * +r;
+    }
 }
-console.log(compareWords("Lua", "Luca"));
+;
+let investment = irCalculator(1000, 0.10, "returnNumber");
+console.log("Interest is " + (investment * 2));

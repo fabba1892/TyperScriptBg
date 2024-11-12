@@ -1,12 +1,16 @@
-//let size = "Med";
-//const SIZE = "Med";
+type returnable = "returnString" | "returnNumber";
+function irCalculator(
+    p: number,
+    r: number,
+    returnValue: returnable
+) {
+    if (returnValue === "returnString") {
+        return p * r;
+    } else {
+        return +p * +r;
+    }
 
-function compareWords(
-    first: string, second: string):
-    "first is earlier" | "same" | "first is later" {
-    if (first < second)
-        return "first is earlier";
-    if (first > second) return "first is later";
-    return "same";
-}
-console.log(compareWords("Lua", "Luca"));
+};
+
+let investment = irCalculator(1000, 0.10, "returnNumber");
+console.log("Interest is " + (investment * 2));
