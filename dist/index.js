@@ -1,12 +1,14 @@
 "use strict";
-function irCalculator(p, r, returnValue) {
-    if (returnValue === "returnString") {
-        return p * r;
-    }
-    else {
-        return +p * +r;
-    }
+let interestCalc = function iCalc(x, y) {
+    return x * y;
+};
+let iCalc;
+function irCalculator(p, r) {
+    return p * r;
 }
 ;
-let investment = irCalculator(1000, 0.10, "returnNumber");
-console.log("Interest is " + (investment * 2));
+iCalc = irCalculator;
+function printInterest(p, r, fIntCalc) {
+    return (fIntCalc(p, r));
+}
+console.log(printInterest(1000, 0.10, irCalculator));
