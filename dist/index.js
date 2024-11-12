@@ -1,14 +1,14 @@
 "use strict";
-let interestCalc = function iCalc(x, y) {
-    return x * y;
+var _a;
+let posts = [];
+const myPost = {
+    userId: 100,
+    postId: 1234,
+    title: "Luca die 🦚",
+    body: {
+        topic: undefined,
+        explanation: "Add functionality"
+    }
 };
-let iCalc;
-function irCalculator(p, r) {
-    return p * r;
-}
-;
-iCalc = irCalculator;
-function printInterest(p, r, fIntCalc) {
-    return (fIntCalc(p, r));
-}
-console.log(printInterest(1000, 0.10, irCalculator));
+posts.push((_a = myPost.body.topic) !== null && _a !== void 0 ? _a : "No Topic");
+console.log(posts);

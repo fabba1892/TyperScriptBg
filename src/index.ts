@@ -1,16 +1,22 @@
-let interestCalc = function iCalc(x: number, y: number) {
-    return x * y;
+let posts: string[] = [];
+type post = {
+    userId: number;
+    postId: number;
+    title: string;
+    body: { topic: any, explanation: string };
 };
-let iCalc: (x: number, y: number) => number;
 
-function irCalculator(p: number, r: number) {
-    return p * r;
-};
-
-iCalc = irCalculator;
-
-function printInterest(p: number, r: number, fIntCalc: Function) {
-    return (fIntCalc(p, r));
+const myPost: post = {
+    userId: 100,
+    postId: 1234,
+    title: "Luca die 🦚",
+    body: {
+        topic: undefined,
+        explanation: "Add functionality"
+    }
 }
 
-console.log(printInterest(1000, 0.10, irCalculator));
+posts.push(myPost.body.topic ?? "No Topic");
+console.log(posts);
+
+
