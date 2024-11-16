@@ -1,28 +1,41 @@
-class Competition {
-    // competitionName : string
-    private competitors: string[] = [];
-    private admin : string = "";
-    constructor(
-        private competitionName : string,
-        private  readonly compId : number) {
-    }
-    addCompetition(competitor : string) {
-        this.competitors.push(competitor);
-    }
-    competitionDetails() {
-        return this.competitionName +"," + this.compId;
-    }
-    get competitionID() {
-        return this.compId;
-    }
-    set competitionAdmin(adminName : string) {
-        if (adminName !== "Luca") {
-            this.admin = adminName;
-        }
-    }
-}
-const competition = 
-    new Competition("Formula 1 2024", 44);
+interface Competable {
+    competitors : string[];
+    admins : string;
+    backupAdmin?: string;
+    //
+    addCompetitor(competitors : string) :void ;
+    competitionDetails() : string;
+};
 
-console.log(competition.competitionDetails());
-    
+class fantasyFootballCompetition implements Competable{
+    competitors : string[] = [];
+    admins : string = "";
+    playerCap : number = 20;
+    draftees : string[] = [];
+    constructor(cAdmins: string) {
+        this.admins = cAdmins;
+    }
+    addCompetitor(competitors: string): void {
+    }
+    competitionDetails(): string {
+        return this.competitors.toString();
+    }
+    draftPlayer(rookie :string){
+        this.draftees.push(rookie);
+    }
+};
+      
+class wtLossCompetition implements Competable {
+    competitors : string[] = [];
+    admins : string = "";
+    backupAdmin : string = "";
+    addCompetitor(competitors: string): void {
+    }
+    competitionDetails(): string {
+        return this.competitors.toString();
+    }
+    setBackupAdmin(supportAdmin : string) {
+        //this.backupAdmin =supportAdmin;
+    }
+};
+
