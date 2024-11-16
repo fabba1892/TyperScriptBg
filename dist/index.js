@@ -1,14 +1,16 @@
 "use strict";
-var _a;
-let posts = [];
-const myPost = {
-    userId: 100,
-    postId: 1234,
-    title: "Luca die 🦚",
-    body: {
-        topic: undefined,
-        explanation: "Add functionality"
+class Competition {
+    constructor(competitionName, compId) {
+        this.competitionName = competitionName;
+        this.compId = compId;
+        // competitionName : string
+        this.competitors = [];
     }
-};
-posts.push((_a = myPost.body.topic) !== null && _a !== void 0 ? _a : "No Topic");
-console.log(posts);
+    addCompetition(competitor) {
+        this.competitors.push(competitor);
+    }
+    competitionDetails() {
+        return this.competitionName + "," + this.compId;
+    }
+}
+const competition = new Competition("Formula 1 2024", 44);

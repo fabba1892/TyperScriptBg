@@ -1,22 +1,28 @@
-let posts: string[] = [];
-type post = {
-    userId: number;
-    postId: number;
-    title: string;
-    body: { topic: any, explanation: string };
-};
-
-const myPost: post = {
-    userId: 100,
-    postId: 1234,
-    title: "Luca die 🦚",
-    body: {
-        topic: undefined,
-        explanation: "Add functionality"
+class Competition {
+    // competitionName : string
+    private competitors: string[] = [];
+    private admin : string = "";
+    constructor(
+        private competitionName : string,
+        private  readonly compId : number) {
+    }
+    addCompetition(competitor : string) {
+        this.competitors.push(competitor);
+    }
+    competitionDetails() {
+        return this.competitionName +"," + this.compId;
+    }
+    get competitionID() {
+        return this.compId;
+    }
+    set competitionAdmin(adminName : string) {
+        if (adminName !== "Luca") {
+            this.admin = adminName;
+        }
     }
 }
+const competition = 
+    new Competition("Formula 1 2024", 44);
 
-posts.push(myPost.body.topic ?? "No Topic");
-console.log(posts);
-
-
+console.log(competition.competitionDetails());
+    
