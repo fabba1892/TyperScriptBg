@@ -1,41 +1,24 @@
-interface Competable {
-    competitors : string[];
-    admins : string;
-    backupAdmin?: string;
-    //
-    addCompetitor(competitors : string) :void ;
-    competitionDetails() : string;
-};
+type Competitor = {
+    cName: string;
+    dateJoined : Date;
+}
 
-class fantasyFootballCompetition implements Competable{
-    competitors : string[] = [];
-    admins : string = "";
-    playerCap : number = 20;
-    draftees : string[] = [];
-    constructor(cAdmins: string) {
-        this.admins = cAdmins;
+type Admins = {
+    adminID: number;
+}
+type adminCompetitor = Competitor | Admins;
+const Luca : adminCompetitor = {
+    adminID: 123,
+    cName: "Luca",
+    dateJoined: new Date("2020-08-07")
+}
+function getDaysJoined(competitor : adminCompetitor) {
+    var today = new Date();
+    if ("dateJoined" in competitor ) {
+        var daysJoined = today.getTime() - competitor.dateJoined.getTime();
+        return daysJoined / (1000 * 60 * 60 * 24);
     }
-    addCompetitor(competitors: string): void {
-    }
-    competitionDetails(): string {
-        return this.competitors.toString();
-    }
-    draftPlayer(rookie :string){
-        this.draftees.push(rookie);
-    }
-};
-      
-class wtLossCompetition implements Competable {
-    competitors : string[] = [];
-    admins : string = "";
-    backupAdmin : string = "";
-    addCompetitor(competitors: string): void {
-    }
-    competitionDetails(): string {
-        return this.competitors.toString();
-    }
-    setBackupAdmin(supportAdmin : string) {
-        //this.backupAdmin =supportAdmin;
-    }
-};
+}
 
+
+console.log(getDaysJoined(Luca));
