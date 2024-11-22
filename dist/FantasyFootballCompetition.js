@@ -1,5 +1,4 @@
-"use strict";
-class fantasyFootballCompetition {
+export class fantasyFootballCompetition {
     constructor(cAdmins) {
         this.competitors = [];
         this.admins = "";
@@ -10,7 +9,7 @@ class fantasyFootballCompetition {
     addCompetitor(competitor) {
     }
     competitionDetails() {
-        return this.competitors.toString();
+        return this.competitors;
     }
     draftPlayer(rookie) {
         this.draftees.push(rookie);

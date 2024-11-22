@@ -1,17 +1,17 @@
 import { Competable } from "./iCompetable";
 
-export class fantasyFootballCompetition implements Competable{
-    competitors : string[] = [];
+export class fantasyFootballCompetition<T> implements Competable<T> {
+    competitors : T[] = [];
     admins : string = "";
     playerCap : number = 20;
     draftees : string[] = [];
     constructor(cAdmins: string) {
         this.admins = cAdmins;
     }
-    addCompetitor(competitor: string): void {
+    addCompetitor(competitor: T): void {
     }
-    competitionDetails(): string {
-        return this.competitors.toString();
+    competitionDetails(): Array<T> {
+        return this.competitors;
     }
     draftPlayer(rookie :string){
         this.draftees.push(rookie);

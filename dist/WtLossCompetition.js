@@ -1,5 +1,4 @@
-"use strict";
-class wtLossCompetition {
+export class wtLossCompetition {
     constructor() {
         this.competitors = [];
         this.admins = "";
@@ -9,7 +8,7 @@ class wtLossCompetition {
         this.competitors.push(competitor);
     }
     competitionDetails() {
-        return this.competitors.toString();
+        return this.competitors;
     }
     setBackupAdmin(supportAdmin) {
         this.backupAdmin = supportAdmin;

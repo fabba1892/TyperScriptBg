@@ -1,8 +1,8 @@
- export interface Competable {
-    competitors : string[];
+ export interface Competable<T> {
+    competitors : T[];
     admins : string;
     backupAdmin?: string;
     //
-    addCompetitor(competitors : string) :void ;
-    competitionDetails() : string;
+    addCompetitor(competitors : T) :void ;
+    competitionDetails() : Array<T>;
 };
