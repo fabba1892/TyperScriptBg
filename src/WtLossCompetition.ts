@@ -1,8 +1,8 @@
 import { Competable } from "./iCompetable";
-@HiDOM("Luca")
+@HiDOM("<h2>Luca 😎🆒</h2>" , "myDiv")
 export class wtLossCompetition<T> implements Competable<T> {
     competitors : T[] = [];
-    admins : string = "";
+    admins : string = "Luca Van Wyk👑";
     backupAdmin : string = "";
     addCompetitor(competitor: T): void {
         this.competitors.push(competitor);
@@ -14,9 +14,14 @@ export class wtLossCompetition<T> implements Competable<T> {
         this.backupAdmin =supportAdmin;
     }
 }
-function HiDOM(target : string) {
+function HiDOM(msg : string, el : string) {
     //console.log("Awe" + target); 
-    return function() {
-        console.log("Awe " + target); 
+    return function(constructor : any) {
+        const docTag = document.getElementById("myDiv");
+        const myCompete = new constructor();
+        if (docTag)           
+            docTag!.innerHTML = 
+            msg + "our admin is " + myCompete.admins;
+        //console.log("Awe " + msg); 
     }
 }

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 let wtLossCompetition = class wtLossCompetition {
     constructor() {
         this.competitors = [];
-        this.admins = "";
+        this.admins = "Luca Van Wyk👑";
         this.backupAdmin = "";
     }
     addCompetitor(competitor) {
@@ -21,12 +21,17 @@ let wtLossCompetition = class wtLossCompetition {
     }
 };
 wtLossCompetition = __decorate([
-    HiDOM("Luca")
+    HiDOM("<h2>Luca 😎🆒</h2>", "myDiv")
 ], wtLossCompetition);
 export { wtLossCompetition };
-function HiDOM(target) {
+function HiDOM(msg, el) {
     //console.log("Awe" + target); 
-    return function () {
-        console.log("Awe " + target);
+    return function (constructor) {
+        const docTag = document.getElementById("myDiv");
+        const myCompete = new constructor();
+        if (docTag)
+            docTag.innerHTML =
+                msg + "our admin is " + myCompete.admins;
+        //console.log("Awe " + msg); 
     };
 }
