@@ -1,5 +1,5 @@
 import { Competable } from "./iCompetable";
-
+@HiDOM("Luca")
 export class wtLossCompetition<T> implements Competable<T> {
     competitors : T[] = [];
     admins : string = "";
@@ -12,5 +12,11 @@ export class wtLossCompetition<T> implements Competable<T> {
     }
     setBackupAdmin(supportAdmin : string) {
         this.backupAdmin =supportAdmin;
+    }
+}
+function HiDOM(target : string) {
+    //console.log("Awe" + target); 
+    return function() {
+        console.log("Awe " + target); 
     }
 }
